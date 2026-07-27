@@ -49,9 +49,6 @@ dev = [
     "mypy>=1.10.0",
 ]
 
-[project.scripts]
-signvision = "signvision.main:main"
-
 [project.urls]
 Repository = "https://github.com/sebastianNugra/SignVision"
 
