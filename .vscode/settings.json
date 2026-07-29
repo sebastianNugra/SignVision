@@ -9,9 +9,6 @@
             "source.organizeImports": "explicit"
         }
     },
-    "ruff.lint.args": [
-        "--config=${workspaceFolder}/pyproject.toml"
-    ],
     "mypy.args": [
         "--config-file=${workspaceFolder}/pyproject.toml"
     ],
