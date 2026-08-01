@@ -1,6 +1,8 @@
 """
-Settings
+Application settings for SignVision.
 
-Responsibility: Define and load application-wide configuration constants
-and settings (camera resolution, model paths, etc.).
+Contains global configuration values used throughout
+the application lifecycle.
 """
+
+LOG_LEVEL = "DEBUG"

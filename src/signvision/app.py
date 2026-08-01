@@ -1,3 +1,6 @@
+from signvision.config.logging_config import configure_logging
+
+
 class Application:
     """Represents the main SignVision application."""
 
@@ -10,6 +13,8 @@ class Application:
         """Initializes the application resources."""
         if self._initialized:
             raise RuntimeError("Application is already initialized.")
+
+        configure_logging()
 
         self._initialized = True
 
