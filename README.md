@@ -65,7 +65,7 @@ pip install pytest pytest-cov black ruff mypy
 ### Run the Application
 
 ```bash
-python src/main.py
+python main.py
 ```
 
 ### Run Tests
@@ -86,10 +86,12 @@ mypy src/
 
 ```
 signvision-ai/
+├── main.py                     # Application entry point
 ├── src/
 │   └── signvision/
 │       ├── __init__.py
-│       ├── main.py              # Application entry point
+│       ├── py.typed             # PEP 561 inline type marker
+│       ├── app.py               # Application lifecycle
 │       ├── camera/              # Webcam management
 │       │   ├── __init__.py
 │       │   ├── camera_manager.py
@@ -122,11 +124,11 @@ signvision-ai/
 │       ├── config/              # Settings & paths
 │       │   ├── __init__.py
 │       │   ├── settings.py
-│       │   └── paths.py
+│       │   ├── paths.py
+│       │   └── logging_config.py
 │       └── utils/               # Helpers & utilities
 │           ├── __init__.py
 │           ├── helpers.py
-│           ├── logger.py
 │           └── exceptions.py
 ├── tests/
 │   ├── unit/
@@ -148,7 +150,7 @@ signvision-ai/
 
 ## Roadmap
 
-- [ ] Project setup and configuration
+- [x] Project setup and configuration
 - [ ] Camera module implementation
 - [ ] Hand detection with MediaPipe
 - [ ] Landmark extraction and normalization
