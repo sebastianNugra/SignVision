@@ -27,7 +27,10 @@ def configure_logging() -> None:
     file_handler.setFormatter(formatter)
 
     logger = logging.getLogger()
-    logger.setLevel(log_level)
 
+    if logger.handlers:
+        return
+
+    logger.setLevel(log_level)
     logger.addHandler(console_handler)
     logger.addHandler(file_handler)

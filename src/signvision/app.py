@@ -1,3 +1,5 @@
+import logging
+
 from signvision.config.logging_config import configure_logging
 
 
@@ -29,17 +31,17 @@ class Application:
         self._running = True
 
         try:
-            print("SignVision iniciado.")
+            logging.info("SignVision iniciado.")
             # Bucle principal de la app.
         finally:
             self._running = False
 
     def shutdown(self) -> None:
         """Shuts down the SignVision application."""
-        if not self._initialized:
-            raise RuntimeError("Application is not initialized.")
-
         if self._running:
-            raise RuntimeError("Cannot shut down while the application is running.")
+            self._running = False
 
-        self._initialized = False
+        if self._initialized:
+            self._initialized = False
+
+        logging.info("SignVision shutdown completed.")
