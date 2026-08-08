@@ -5,14 +5,18 @@ Responsible for opening the camera, capturing frames and releasing
 the associated resources.
 """
 
+import cv2
+
 
 class Camera:
-    def __init__(self) -> None:
-        pass
+    def __init__(self, device_index: int) -> None:
+        """Creates a new Camera instance."""
+        self._device_index = device_index
+        self._capture: cv2.VideoCapture | None = None
 
     def open(self) -> None:
         # Initialize the camera connection
-        pass
+        self._capture = cv2.VideoCapture(self._device_index)
 
     def read(self) -> None:
         # Capture a frame from the camera
