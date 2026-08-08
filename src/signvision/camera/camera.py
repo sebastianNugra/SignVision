@@ -18,6 +18,12 @@ class Camera:
         # Initialize the camera connection
         self._capture = cv2.VideoCapture(self._device_index)
 
+        if self._capture is None or not self._capture.isOpened():
+            if self._capture is not None:
+                self._capture.release()
+            self._capture = None
+            raise RuntimeError(f"Failed to open camera with index {self._device_index}")
+
     def read(self) -> None:
         # Capture a frame from the camera
         pass
