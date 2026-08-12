@@ -1,9 +1,16 @@
-from signvision.camera.camera import Camera
+from signvision.camera import Camera
 
-camera = Camera(0)
+camera = Camera(device_index=0)
 
 try:
     camera.open()
     print("Camera opened successfully")
-except RuntimeError as e:
-    print(f"Camera failed: {e}")
+
+    frame = camera.read()
+
+    print(type(frame))
+    print(frame.shape)
+    print(frame.dtype)
+
+finally:
+    camera.close()
