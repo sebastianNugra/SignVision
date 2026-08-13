@@ -94,8 +94,7 @@ signvision-ai/
 │       ├── app.py               # Application lifecycle
 │       ├── camera/              # Webcam management
 │       │   ├── __init__.py
-│       │   ├── camera_manager.py
-│       │   └── frame_reader.py
+│       │   └── camera.py
 │       ├── vision/              # Hand detection pipeline
 │       │   ├── __init__.py
 │       │   ├── hand_detector.py
@@ -151,7 +150,7 @@ signvision-ai/
 ## Roadmap
 
 - [x] Project setup and configuration
-- [ ] Camera module implementation
+- [x] Camera module implementation
 - [ ] Hand detection with MediaPipe
 - [ ] Landmark extraction and normalization
 - [ ] AI model training pipeline
