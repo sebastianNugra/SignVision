@@ -1,6 +1,7 @@
-"""
-HandDetector
+class HandDetector:
+    """
+    Responsible for managing hand detection.
+    """
 
-Responsibility: Detect hands in video frames using MediaPipe Hands
-and return hand landmark coordinates.
-"""
+    def __init__(self) -> None:
+        self._hands = None
