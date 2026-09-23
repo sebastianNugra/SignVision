@@ -6,5 +6,6 @@ detection and extraction.
 """
 
 from .hand_detector import HandDetector
+from .landmark_extractor import LandmarkExtractor
 
-__all__ = ["HandDetector"]
+__all__ = ["HandDetector", "LandmarkExtractor"]
