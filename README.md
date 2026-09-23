@@ -23,6 +23,7 @@ src/signvision/
 ├── camera/        # Webcam capture and frame management
 ├── vision/        # Hand detection and landmark extraction
 ├── models/        # AI model loading and gesture classification
+├── training/      # Landmark data collection and model training
 ├── services/      # Business logic orchestration
 ├── database/      # SQLite persistence layer
 ├── gui/           # Desktop interface (CustomTkinter)
@@ -105,6 +106,11 @@ signvision-ai/
 │       │   ├── gesture_classifier.py
 │       │   ├── model_loader.py
 │       │   └── label_map.py
+│       ├── training/            # Training pipeline
+│       │   ├── __init__.py
+│       │   ├── data_collector.py
+│       │   ├── dataset.py
+│       │   └── trainer.py
 │       ├── services/            # Business logic
 │       │   ├── __init__.py
 │       │   ├── translation_service.py
@@ -151,8 +157,8 @@ signvision-ai/
 
 - [x] Project setup and configuration
 - [x] Camera module implementation
-- [ ] Hand detection with MediaPipe
-- [ ] Landmark extraction and normalization
+- [x] Hand detection with MediaPipe
+- [x] Landmark extraction and normalization
 - [ ] AI model training pipeline
 - [ ] Gesture classification
 - [ ] Translation service integration
