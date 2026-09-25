@@ -86,6 +86,7 @@ module = [
     "mediapipe.*",
     "customtkinter.*",
     "pyttsx3.*",
+    "keras.*",
 ]
 ignore_missing_imports = true
 
