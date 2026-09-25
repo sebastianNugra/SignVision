@@ -75,6 +75,20 @@ python main.py
 pytest
 ```
 
+### Training Pipeline
+
+Collect landmark samples for each gesture (hold the pose while capturing):
+
+```bash
+python scripts/collect_data.py <gesture> <num_samples>
+```
+
+Train the model and export it as a TensorFlow SavedModel:
+
+```bash
+python scripts/train.py
+```
+
 ### Code Quality
 
 ```bash
@@ -159,7 +173,7 @@ signvision-ai/
 - [x] Camera module implementation
 - [x] Hand detection with MediaPipe
 - [x] Landmark extraction and normalization
-- [ ] AI model training pipeline
+- [x] AI model training pipeline
 - [ ] Gesture classification
 - [ ] Translation service integration
 - [ ] Text-to-speech output
