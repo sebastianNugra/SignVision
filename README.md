@@ -81,12 +81,20 @@ Collect landmark samples for each gesture (hold the pose while capturing):
 
 ```bash
 python scripts/collect_data.py <gesture> <num_samples>
+python scripts/collect_data.py <gesture> <num_samples> --camera 1
 ```
 
 Train the model and export it as a TensorFlow SavedModel:
 
 ```bash
 python scripts/train.py
+```
+
+Classify gestures live with the trained model (ESC to exit):
+
+```bash
+python scripts/classify_live.py
+python scripts/classify_live.py --camera 1
 ```
 
 ### Code Quality
@@ -174,7 +182,7 @@ signvision-ai/
 - [x] Hand detection with MediaPipe
 - [x] Landmark extraction and normalization
 - [x] AI model training pipeline
-- [ ] Gesture classification
+- [x] Gesture classification
 - [ ] Translation service integration
 - [ ] Text-to-speech output
 - [ ] GUI development with CustomTkinter
