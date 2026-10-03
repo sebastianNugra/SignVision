@@ -87,6 +87,7 @@ module = [
     "customtkinter.*",
     "pyttsx3.*",
     "keras.*",
+    "tensorflow.*",
 ]
 ignore_missing_imports = true
 

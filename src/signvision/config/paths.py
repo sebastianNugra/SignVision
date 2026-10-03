@@ -19,3 +19,5 @@ HAND_LANDMARKER_MODEL_PATH = TRAINED_MODELS_DIR / "hand_landmarker.task"
 DATASET_FILE = TRAINED_MODELS_DIR / "sign_language_dataset.npz"
 
 GESTURE_MODEL_DIR = TRAINED_MODELS_DIR / "gesture_model"
+
+GESTURE_MODEL_LABELS_PATH = TRAINED_MODELS_DIR / "gesture_model_labels.json"
