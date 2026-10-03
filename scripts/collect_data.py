@@ -2,7 +2,8 @@
 CLI tool to collect landmark samples for one gesture from the live camera.
 
 Usage:
-    python scripts/collect_data.py <gesture> <num_samples> [--output PATH]
+    python scripts/collect_data.py <gesture> <num_samples>
+        [--output PATH] [--camera INDEX]
 
 Samples are appended to the dataset file (default: trained_models/
 sign_language_dataset.npz).
@@ -37,6 +38,12 @@ def parse_args() -> argparse.Namespace:
         default=DATASET_FILE,
         help="Dataset file path",
     )
+    parser.add_argument(
+        "--camera",
+        type=int,
+        default=0,
+        help="Camera device index (e.g. 1 if 0 is unavailable)",
+    )
 
     return parser.parse_args()
 
@@ -44,7 +51,7 @@ def parse_args() -> argparse.Namespace:
 def main() -> int:
     args = parse_args()
 
-    camera = Camera(0)
+    camera = Camera(args.camera)
     camera.open()
     hand_detector = HandDetector()
     hand_detector.open()
