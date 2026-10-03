@@ -55,6 +55,10 @@ trained_models/*.tflite
 trained_models/*.pb
 trained_models/*.pt
 trained_models/*.onnx
+trained_models/*.task
+trained_models/*.npz
+trained_models/*_labels.json
+trained_models/gesture_model/
 !trained_models/.gitkeep
 
 # Logs
