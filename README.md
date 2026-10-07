@@ -97,6 +97,13 @@ python scripts/classify_live.py
 python scripts/classify_live.py --camera 1
 ```
 
+Translate a held pose sequence into text (hold the pose to confirm each word, R resets, ESC exits):
+
+```bash
+python scripts/translate_live.py
+python scripts/translate_live.py --camera 1
+```
+
 ### Code Quality
 
 ```bash
@@ -183,7 +190,7 @@ signvision-ai/
 - [x] Landmark extraction and normalization
 - [x] AI model training pipeline
 - [x] Gesture classification
-- [ ] Translation service integration
+- [x] Translation service integration
 - [ ] Text-to-speech output
 - [ ] GUI development with CustomTkinter
 - [ ] SQLite database for history
