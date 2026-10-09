@@ -2,7 +2,7 @@
 CLI tool to translate live sign gestures into text.
 
 Usage:
-    python scripts/translate_live.py [--camera INDEX] [--model-dir PATH]
+    python scripts/translate_live.py [--camera INDEX] [--model-dir PATH] [--speak]
 
 Hold a pose to confirm a word. Press R to reset, ESC to exit.
 """
@@ -16,7 +16,7 @@ import cv2
 from signvision.camera import Camera
 from signvision.config.paths import GESTURE_MODEL_DIR
 from signvision.models import GestureClassifier, LabelMap, ModelLoader
-from signvision.services import TranslationService
+from signvision.services import TextToSpeech, TranslationService
 from signvision.vision import HandDetector, LandmarkExtractor
 
 
@@ -33,6 +33,11 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         default=GESTURE_MODEL_DIR,
         help="Trained gesture model directory",
+    )
+    parser.add_argument(
+        "--speak",
+        action="store_true",
+        help="Speak each confirmed word aloud",
     )
 
     return parser.parse_args()
@@ -51,6 +56,8 @@ def main() -> int:
     classifier.load()
 
     service = TranslationService(classifier)
+
+    text_to_speech = TextToSpeech() if args.speak else None
 
     camera = Camera(args.camera)
     camera.open()
@@ -75,6 +82,8 @@ def main() -> int:
                         f"Word: {result.label} ({result.confidence:.2f}) "
                         f"-> {service.text}"
                     )
+                    if text_to_speech is not None:
+                        text_to_speech.speak(result.label)
 
             cv2.putText(
                 frame,
@@ -96,6 +105,8 @@ def main() -> int:
     except KeyboardInterrupt:
         pass
     finally:
+        if text_to_speech is not None:
+            text_to_speech.shutdown()
         hand_detector.close()
         camera.close()
         cv2.destroyAllWindows()
