@@ -102,6 +102,13 @@ Translate a held pose sequence into text (hold the pose to confirm each word, R 
 ```bash
 python scripts/translate_live.py
 python scripts/translate_live.py --camera 1
+python scripts/translate_live.py --camera 1 --speak
+```
+
+Speak a text phrase aloud:
+
+```bash
+python scripts/speak_text.py "Hola mundo"
 ```
 
 ### Code Quality
@@ -191,7 +198,7 @@ signvision-ai/
 - [x] AI model training pipeline
 - [x] Gesture classification
 - [x] Translation service integration
-- [ ] Text-to-speech output
+- [x] Text-to-speech output
 - [ ] GUI development with CustomTkinter
 - [ ] SQLite database for history
 - [ ] Unit and integration tests
