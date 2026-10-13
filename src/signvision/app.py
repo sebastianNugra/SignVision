@@ -1,6 +1,7 @@
 import logging
 
 from signvision.config.logging_config import configure_logging
+from signvision.gui import MainWindow
 
 
 class Application:
@@ -32,7 +33,9 @@ class Application:
 
         try:
             logging.info("SignVision iniciado.")
-            # Bucle principal de la app.
+            window = MainWindow()
+            window.mainloop()
+            logging.info("SignVision cerrado.")
         finally:
             self._running = False
 
