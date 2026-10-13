@@ -65,6 +65,9 @@ pip install pytest pytest-cov black ruff mypy
 
 ### Run the Application
 
+Launch the desktop GUI (camera view with live translation, Start/Stop, Reset and
+text-to-speech toggle):
+
 ```bash
 python main.py
 ```
@@ -199,7 +202,7 @@ signvision-ai/
 - [x] Gesture classification
 - [x] Translation service integration
 - [x] Text-to-speech output
-- [ ] GUI development with CustomTkinter
+- [x] GUI development with CustomTkinter
 - [ ] SQLite database for history
 - [ ] Unit and integration tests
 - [ ] Performance optimization
